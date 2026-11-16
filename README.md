@@ -101,7 +101,7 @@ Each model is fit on every season up to t and predicts each hitter's road strike
 
 ![Backtest of the model ladder](coors_hitters_lkj_v2_fig4.png)
 
-*Figure 4. Shrinkage does most of the work, and home results with one park factor help more. The hitter-specific gaps and the LKJ correlations did not improve next season's road forecast. Only 62 hitters are scored (11 to 14 per season pair, the ones who stayed with the club), so the differences among M2, M3, and M4 are within the noise.*
+*Figure 4. Shrinkage does most of the work, and home results with one park factor help more. The hitter-specific gaps and the LKJ correlations did not improve next season's road forecast. Only 62 hitter-season pairs are scored (11 to 14 per season pair, the hitters who stayed with the club, 31 different hitters in all), so the differences among M2, M3, and M4 are within the noise.*
 
 I would use the richer model to describe how Coors works, and the simpler one to forecast until there is enough data to show the richer one earns its place.
 

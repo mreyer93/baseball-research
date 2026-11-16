@@ -31,6 +31,8 @@ Created on Sun Nov 15 15:43:03 2026
 # Data: MLB Stats API home and road splits for every Rockies hitter, 2015 to 2026 (no 2020).
 # v2 (15 November 2026): file header, no period after step numbers, longer variable names, and
 # Figures 1, 3 and 4 (the old Figure 1 is now Figure 2, in Rockies colors). The numbers are the same as v1.
+# 16 November 2026: Step 8 also prints how many different hitters it scores, and Figure 4's title
+# counts hitter-season pairs (a hitter who stayed several seasons is scored once per pair).
 
 import json
 import os
@@ -557,12 +559,14 @@ VARIANTS = {'M1': dict(use_home=0, gap_re=0, use_corr=0), 'M2': dict(use_home=1,
             'M3': dict(use_home=1, gap_re=1, use_corr=0), 'M4': dict(use_home=1, gap_re=1, use_corr=1)}
 results = []
 prior_check = []
+scored_ids = []
 for t_season in [2021, 2022, 2023, 2024, 2025]:
     train = hitter_seasons[hitter_seasons['season'] <= t_season].reset_index(drop=True)
     now = train[(train['season'] == t_season) & (train['pa_a'] > 0) & (train['bip_a'] > 0)]
     nxt = hitter_seasons[hitter_seasons['season'] == t_season + 1][['player_id', 'pa_a', 'so_a', 'bip_a', 'hb_a']]
     both = now.reset_index().merge(nxt, on='player_id', suffixes=('', '_next'))
     both = both[(both['pa_a_next'] > 0) & (both['bip_a_next'] > 0)]
+    scored_ids += list(both['player_id'])
     k_next = both['so_a_next'] / both['pa_a_next']; b_next = both['hb_a_next'] / both['bip_a_next']
     preds = {'raw': (both['so_a'] / both['pa_a'], both['hb_a'] / both['bip_a'])}
     for name, flags in VARIANTS.items():
@@ -581,6 +585,7 @@ print(results.pivot(index='season', columns='model', values='BABIP RMSE').round(
 print('mean over the five season pairs:')
 print(results.groupby('model')[['K% RMSE', 'BABIP RMSE']].mean().round(5).to_string())
 print('hitters scored per pair:', results.groupby('season')['hitters'].first().to_dict())
+print('hitter-season pairs scored', len(scored_ids), '; different hitters', len(set(scored_ids)))
 prior_corr_draws = np.concatenate(prior_check)
 print(f'check on the LKJ formula: SD of one correlation drawn from the LKJ({ETA:.0f}) prior, K = 4: sampled {prior_corr_draws.std():.3f}, formula {1 / np.sqrt(2 * ETA + 4 - 1):.3f}')
 
@@ -628,12 +633,14 @@ print(f'check on the LKJ formula: SD of one correlation drawn from the LKJ({ETA:
 # M4     0.05558     0.03933
 # raw    0.06627     0.06157
 # hitters scored per pair: {'2021->2022': 11, '2022->2023': 14, '2023->2024': 13, '2024->2025': 13, '2025->2026': 11}
+# hitter-season pairs scored 62 ; different hitters 31
 # check on the LKJ formula: SD of one correlation drawn from the LKJ(2) prior, K = 4: sampled 0.377, formula 0.378
 #
 # Shrinkage does most of the work (raw to M1), and home results with one park gap help more
 # (M1 to M2). Hitter-specific gaps (M3) and the LKJ correlations (M4) do not improve next
-# season's road forecast. Only 62 hitters are scored, so the M2 to M4 differences are noise-
-# sized. The richer model describes Coors better; the simpler one forecasts as well.
+# season's road forecast. Only 62 hitter-season pairs are scored, from 31 different hitters, so
+# the M2 to M4 differences are noise-sized. The richer model describes Coors better; the simpler
+# one forecasts as well.
 ####
 
 # Figure 4 Backtest error for each rung of the ladder, by season pair and on average
@@ -655,7 +662,7 @@ axes[0].set_ylabel('error (RMSE, weighted)')
 axes[1].plot([], [], 'o', color=SILVER, ms=7, label='one season pair (2021 to 2026)')
 axes[1].plot([], [], color=PURPLE, lw=4, label='mean of the five pairs')
 axes[1].legend(frameon=False, fontsize=11, loc='upper right')
-fig.suptitle(f'Backtest of the model ladder, {results["season"].nunique()} season pairs, {int(results.groupby("season")["hitters"].first().sum())} hitters scored', x=0.01, ha='left', fontsize=15)
+fig.suptitle(f'Backtest of the model ladder, {results["season"].nunique()} season pairs, {int(results.groupby("season")["hitters"].first().sum())} hitter-season pairs scored', x=0.01, ha='left', fontsize=15)
 fig.tight_layout()
 fig.savefig(os.path.join(HERE, 'coors_hitters_lkj_v2_fig4.png'))
 plt.close(fig)
