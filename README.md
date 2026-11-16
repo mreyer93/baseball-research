@@ -85,7 +85,7 @@ The model's average Coors gap is −0.047 strikeouts per plate appearance (90 pe
 
 ![Raw and model Coors gaps for 2026 hitters](coors_hitters_lkj_v2_fig3.png)
 
-*Figure 3. The model gives every 2026 hitter about the same BABIP gap (+0.045 to +0.053) whatever his raw split: Willi Castro's raw +0.103 becomes +0.052, and Ezequiel Tovar's raw −0.042 becomes +0.045. Strikeout gaps are shrunk toward the average, more for hitters with fewer plate appearances: Mickey Moniak's raw −0.152 (241 plate appearances at home, 195 on the road) becomes −0.092, and Edouard Julien's raw +0.005 (158 and 118) becomes −0.034.*
+*Figure 3. The ten 2026 hitters with the most home plate appearances, the ones shown, all get about the same model BABIP gap (+0.045 to +0.053) whatever their raw splits: Willi Castro's raw +0.103 becomes +0.052, and Ezequiel Tovar's raw −0.042 becomes +0.045. Strikeout gaps are shrunk toward the average, most for extreme gaps and small samples: Mickey Moniak's raw −0.152, the most extreme (241 plate appearances at home, 195 on the road), becomes −0.092, and Edouard Julien's raw +0.005, from the fewest plate appearances (158 and 118), becomes −0.034.*
 
 ### Forecasting backtest
 

@@ -32,7 +32,8 @@ Created on Sun Nov 15 15:43:03 2026
 # v2 (15 November 2026): file header, no period after step numbers, longer variable names, and
 # Figures 1, 3 and 4 (the old Figure 1 is now Figure 2, in Rockies colors). The numbers are the same as v1.
 # 16 November 2026: Step 8 also prints how many different hitters it scores, and Figure 4's title
-# counts hitter-season pairs (a hitter who stayed several seasons is scored once per pair).
+# counts hitter-season pairs (a hitter who stayed several seasons is scored once per pair). The
+# Step 7 note now says its BABIP range covers the ten hitters printed, not every 2026 hitter.
 
 import json
 import os
@@ -514,10 +515,11 @@ print(hitters_2026.round(3).to_string(index=False))
 #   Cole Carrigg      190      182     -0.059       -0.051          0.104            0.052
 # Edouard Julien      158      118      0.005       -0.034          0.047            0.049
 #
-# Every 2026 hitter gets about the same BABIP gap (+0.045 to +0.053), whatever his raw split.
-# Strikeout gaps are shrunk toward the average, more for hitters with fewer plate appearances:
-# Moniak -0.152 raw, -0.092 model, and Julien (the fewest plate appearances here) +0.005 raw,
-# -0.034 model, which moves him past Rumfield (-0.008 raw, -0.023 model).
+# The ten 2026 hitters printed here (the most home plate appearances) all get about the same
+# BABIP gap (+0.045 to +0.053), whatever their raw splits. Strikeout gaps are shrunk toward the
+# average, most for extreme gaps and small samples: Moniak (the most extreme) -0.152 raw, -0.092
+# model, and Julien (the fewest plate appearances here) +0.005 raw, -0.034 model, which moves him
+# past Rumfield (-0.008 raw, -0.023 model).
 ####
 
 # Figure 3 Raw and model Coors gaps for the ten 2026 hitters with the most home plate appearances
