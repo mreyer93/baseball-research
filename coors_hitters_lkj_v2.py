@@ -291,6 +291,9 @@ def stan_data(df, use_home=1, gap_re=1, use_corr=1):
             'bip_h': df['bip_h'].tolist(), 'hb_h': df['hb_h'].tolist(), 'bip_a': df['bip_a'].tolist(), 'hb_a': df['hb_a'].tolist(),
             'use_home': use_home, 'gap_re': gap_re, 'use_corr': use_corr, 'eta': ETA}
 
+# Sampler settings: a first run at Stan's defaults (1,000 draws per chain after warmup, adapt_delta 0.8)
+# left two backtest fits at R-hat 1.012 and 1.014 and two divergent transitions in the recovery fit, so
+# the draws are doubled and adapt_delta is raised to 0.95 (smaller steps, fewer divergences, slower draws).
 # Early in warmup Stan may print 'lkj_corr_cholesky_lpdf: Random variable[2] is 0'. Those are
 # rejected proposals while the step size adapts, not a problem with the fit; R-hat, effective
 # sample size, and divergences after warmup are what to check.
@@ -510,7 +513,9 @@ print(hitters_2026.round(3).to_string(index=False))
 # Edouard Julien      158      118      0.005       -0.034          0.047            0.049
 #
 # Every 2026 hitter gets about the same BABIP gap (+0.045 to +0.053), whatever his raw split.
-# Strikeout gaps are shrunk but keep their order (Moniak -0.152 raw, -0.092 model).
+# Strikeout gaps are shrunk toward the average, more for hitters with fewer plate appearances:
+# Moniak -0.152 raw, -0.092 model, and Julien (the fewest plate appearances here) +0.005 raw,
+# -0.034 model, which moves him past Rumfield (-0.008 raw, -0.023 model).
 ####
 
 # Figure 3 Raw and model Coors gaps for the ten 2026 hitters with the most home plate appearances

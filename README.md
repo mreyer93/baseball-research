@@ -45,6 +45,8 @@ where K is strikeouts and TBF is total batters faced. That is the posterior mean
 
 The difference is talent changing between seasons, which one season's likelihood cannot see. A model in which talent drifts from season to season (a state-space model, fit by its marginal likelihood across seasons) would estimate both at once; the backtest k stands in for it.
 
+Limits: the best k is chosen and scored on the same four season pairs, which flatters it slightly (the curve is flat from 125 to 200), and starters and relievers share one prior, which was not tested against separate priors.
+
 ## Coors gaps for Rockies hitters
 
 This is my first Stan model, written in November 2026 to learn the Lewandowski-Kurowicka-Joe (LKJ) prior for correlation matrices ([Lewandowski, Kurowicka, and Joe, 2009](https://doi.org/10.1016/j.jmva.2009.04.008)). The data are MLB Stats API home and road splits for every Rockies hitter except pitchers, 2015 to 2026 without 2020: 242 hitter-seasons from 114 hitters, with 32,940 plate appearances at home and 32,360 on the road. The player splits add up to the team totals in every season.
@@ -83,7 +85,7 @@ The model's average Coors gap is −0.047 strikeouts per plate appearance (90 pe
 
 ![Raw and model Coors gaps for 2026 hitters](coors_hitters_lkj_v2_fig3.png)
 
-*Figure 3. The model gives every 2026 hitter about the same BABIP gap (+0.045 to +0.053) whatever his raw split: Willi Castro's raw +0.103 becomes +0.052, and Ezequiel Tovar's raw −0.042 becomes +0.045. Strikeout gaps are shrunk but keep their order: Mickey Moniak's raw −0.152 (241 plate appearances at home, 195 on the road) becomes −0.092.*
+*Figure 3. The model gives every 2026 hitter about the same BABIP gap (+0.045 to +0.053) whatever his raw split: Willi Castro's raw +0.103 becomes +0.052, and Ezequiel Tovar's raw −0.042 becomes +0.045. Strikeout gaps are shrunk toward the average, more for hitters with fewer plate appearances: Mickey Moniak's raw −0.152 (241 plate appearances at home, 195 on the road) becomes −0.092, and Edouard Julien's raw +0.005 (158 and 118) becomes −0.034.*
 
 ### Forecasting backtest
 
@@ -103,7 +105,7 @@ Each model is fit on every season up to t and predicts each hitter's road strike
 
 I would use the richer model to describe how Coors works, and the simpler one to forecast until there is enough data to show the richer one earns its place.
 
-Limits: each hitter-season is its own unit, so the same hitter's seasons are not linked (a hitter effect that drifts from season to season would use more of the data); home minus road mixes the park, ordinary home advantage, and any hangover, which the arithmetic above separates only roughly; and hitters traded during a season count only their Rockies plate appearances.
+Limits: each hitter-season is its own unit, so the same hitter's seasons are not linked (a hitter effect that drifts from season to season would use more of the data); home minus road mixes the park, ordinary home advantage, and any hangover, which the arithmetic above separates only roughly; hitters traded during a season count only their Rockies plate appearances; and the prior on the spreads τ (half-normal(0, 0.5)) was not varied, so the near-zero BABIP spreads, the estimates most likely to depend on it, are untested against it.
 
 ## Running the scripts
 

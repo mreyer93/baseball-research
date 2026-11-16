@@ -231,6 +231,7 @@ for ycol in ('k_drag_rel', 'k_magnus_rel'):
 # Coors against everywhere else (Figure 2). Among the road parks alone the relationship is much
 # weaker (slopes 0.30 and 0.58, correlations 0.19 and 0.42): there the spread in air density is
 # small next to the game-to-game noise, so game-level temperature does not resolve the effect well.
+# Error in my air density estimate (no humidity or daily pressure) would also flatten those slopes.
 ####
 
 # Figure 2 Game by game: relative drag and spin force against relative air density
