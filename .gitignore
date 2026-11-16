@@ -1,0 +1,9 @@
+# Downloaded and exported data (the scripts download what they need on the first run)
+data/*
+!data/player_positions.csv
+# CmdStan build products
+coors_hitters_lkj
+*.hpp
+*.o
+.DS_Store
+__pycache__/
