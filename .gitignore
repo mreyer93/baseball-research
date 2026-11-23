@@ -1,9 +1,10 @@
 # Downloaded and exported data (the scripts download what they need on the first run)
-data/*
-!data/player_positions.csv
+*/data/*
+!rockies-forecasting/data/player_positions.csv
 # CmdStan build products
-coors_hitters_lkj
+rockies-forecasting/coors_hitters_lkj
 *.hpp
 *.o
 .DS_Store
 __pycache__/
+*_stderr.txt
