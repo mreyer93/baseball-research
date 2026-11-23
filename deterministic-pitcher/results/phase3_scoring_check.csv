@@ -1,0 +1,15 @@
+measure,real,simulated
+runs per half-inning (full regulation half-innings),0.49505911470497244,0.4963441176470588
+share of scoreless half-innings,0.7308203264805974,0.7286485294117647
+share of half-innings with 3 or more runs,0.056839895904737064,0.056726470588235295
+runs per team-game,4.436681447870475,4.4823375
+standard deviation of team runs per game,3.1678230072022293,3.1237173377594245
+home team win share,0.5297514695266577,0.522775
+extra-inning share,0.08683097865319171,0.100525
+pitches per half-inning (full regulation half-innings),16.16911840532851,16.21709117647059
+"runs per half-inning, low offense",0.4385268296236931,0.4447788236333908
+"runs per half-inning, middle offense",0.49089004119903396,0.4930677963910306
+"runs per half-inning, high offense",0.5573039992542184,0.5524118424554645
+"runs per half-inning, inning 1",0.5148499535938951,0.5430375
+"runs per half-inning, inning 5",0.5101577807569352,0.49105
+"runs per half-inning, inning 8",0.4808703722800866,0.49695

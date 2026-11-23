@@ -1,0 +1,61 @@
+games: 9697  plays: 757246  pitcher appearances: 82964
+appearances by role: {'reliever': 63104, 'starter': 19394, 'position player': 466}
+ties after the last play: 0
+appearances with no play in the play-by-play (entered and faced no one): 0
+work rows with no matching pitcher line: 13
+mean win value of a run: over all half-innings 0.0990 (about 10.1 runs per win), over the half-innings where runs actually scored 0.0965 (about 10.4 runs per win)
+mean win value of a run when the pitcher entered, by role: {'position player': 0.0017, 'reliever': 0.1116, 'starter': 0.0982}
+mean win value of a run at entry, top relievers 0.157  other relievers 0.0923
+team-games: 19394  with a lock: 7511  lock games lost by the real team: 300
+lock wins D adds per team-season: 2.5 (Phase 1 from the game logs: 2.5)
+ trailing_by  from_inning  games_per_season  d_innings_per_season  wins_cost_per_season  real_comeback_rate  model_mop_up_rate  model_d_rate  wins_cost_per_100_innings
+           4            5            34.142               113.292                 1.003               0.031              0.036         0.007                      0.885
+           5            5            23.767                74.550                 0.374               0.016              0.019         0.003                      0.502
+           6            5            16.133                48.667                 0.137               0.008              0.010         0.002                      0.281
+           7            5            10.475                30.033                 0.044               0.004              0.005         0.001                      0.148
+           8            5             6.908                18.933                 0.015               0.002              0.002         0.000                      0.078
+           4            6            32.917                93.008                 0.712               0.025              0.028         0.006                      0.765
+           5            6            23.108                62.533                 0.265               0.013              0.014         0.003                      0.423
+           6            6            15.717                41.308                 0.096               0.007              0.007         0.001                      0.231
+           7            6            10.275                25.925                 0.030               0.002              0.004         0.001                      0.116
+           8            6             6.742                16.350                 0.010               0.001              0.002         0.000                      0.059
+           4            7            31.167                68.425                 0.425               0.014              0.019         0.005                      0.622
+           5            7            21.842                46.525                 0.148               0.008              0.009         0.002                      0.318
+           6            7            14.967                31.383                 0.052               0.005              0.005         0.001                      0.167
+           7            7             9.900                20.242                 0.016               0.000              0.002         0.000                      0.081
+           8            7             6.517                13.125                 0.005               0.000              0.001         0.000                      0.040
+                                use            role  innings_per_season  pitches_per_season  appearances_removed_per_season
+                               lock         starter                31.4               498.0                             0.0
+                               lock    top reliever                51.0               808.3                            50.7
+                               lock  other reliever                83.6              1368.3                            74.3
+                               lock position player                 0.3                 5.5                             0.4
+blowout, trailing by 5 from the 6th         starter                 0.9                13.6                             0.0
+blowout, trailing by 5 from the 6th    top reliever                 4.8                78.1                             4.7
+blowout, trailing by 5 from the 6th  other reliever                53.2               880.1                            29.4
+blowout, trailing by 5 from the 6th position player                 3.6                54.1                             3.4
+relief_innings                591.5
+slot_innings                   73.9
+relief_innings_removed        134.5
+relief_appearances            525.9
+slot_appearances               65.7
+relief_appearances_removed    125.0
+team-seasons where the lock use alone removes more relief innings than an average bullpen slot pitched: 0.975  more relief appearances: 0.975
+relief appearances: 63104, back to back: 0.165 of them
+pitcher-seasons with both kinds of appearance: 1591
+runs allowed per batter, rested 0.1158, back to back 0.1176 (raw, across pitchers)
+back-to-back penalty within pitcher-season: 0.0085 runs per batter (95% interval 0.0039 to 0.0130), about 0.33 runs per 9 innings (0.15 to 0.50)
+runs allowed per batter: top relievers 0.0963, other relievers 0.1227, gap 0.0264 (about 1.01 runs per 9 innings)
+                        policy  d_innings  relief_apps_removed  apps_rested  top_reliever_apps_rested
+                     lock only      164.9                125.0         15.4                       6.5
+lock + blowout 8+ from the 6th      181.2                132.1         16.0                       6.7
+lock + blowout 7+ from the 6th      190.8                137.5         16.4                       6.8
+lock + blowout 6+ from the 6th      206.2                146.3         16.9                       7.0
+lock + blowout 5+ from the 6th      227.4                159.1         17.5                       7.1
+lock + blowout 4+ from the 6th      257.6                179.2         18.7                       7.5
+                        policy  lock_wins  blowout_cost  rest_dividend  rest_low  rest_high  slot_cost  net_wins  redeploy_ceiling  net_with_ceiling
+                     lock only      2.500        -0.000          0.096     0.044      0.147     -0.038     2.558             1.432             3.990
+lock + blowout 8+ from the 6th      2.500        -0.010          0.099     0.045      0.152     -0.037     2.552             1.453             4.005
+lock + blowout 7+ from the 6th      2.500        -0.030          0.101     0.046      0.155     -0.036     2.535             1.468             4.003
+lock + blowout 6+ from the 6th      2.492        -0.096          0.105     0.048      0.161     -0.036     2.465             1.494             3.959
+lock + blowout 5+ from the 6th      2.492        -0.265          0.109     0.049      0.167     -0.034     2.301             1.530             3.831
+lock + blowout 4+ from the 6th      2.492        -0.712          0.117     0.053      0.180     -0.033     1.864             1.586             3.451

@@ -1,0 +1,83 @@
+plate appearances: 730295  pitcher lines: 82964
+                     K      BB     HBP      1B      2B      3B      HR     ROE     OUT  batters
+time through 1  0.2387  0.0782  0.0105  0.1403  0.0428  0.0034  0.0309  0.0060  0.4492   172478
+time through 2  0.2102  0.0752  0.0105  0.1442  0.0455  0.0039  0.0328  0.0058  0.4718   163559
+time through 3  0.1957  0.0775  0.0103  0.1502  0.0480  0.0040  0.0352  0.0062  0.4730    89298
+{'outs per start': 15.563, 'batters per start': 21.931, 'pitches per start': 83.53, 'share of starts reaching 100 pitches': 0.105}
+role this season  pitchers  runs per batter this season  runs per batter next season
+    top reliever       243                       0.0969                       0.1091
+  other reliever      1001                       0.1178                       0.1179
+gap this season 0.0209, next season 0.0088: 0.42 of the gap persists
+shrink weight on the top-against-other difference: 0.395
+rested other reliever: 0.1182 runs per batter (same random numbers for every row)
+ multiplier  extra_runs_per_batter
+       1.02                 0.0030
+       1.04                 0.0057
+       1.06                 0.0082
+       1.08                 0.0109
+multiplier for each penalty: {'low': 1.0297, 'central': 1.0648, 'high': 1.0991}
+{'relief appearances per team-season': 525.8667, 'relief innings per team-season': 591.5306, 'top-reliever appearances per team-season': 157.275, 'share of relief appearances back to back': 0.165, 'share on a third day running': 0.0071, 'share the day after 30 or more pitches': 0.0019, 'share of relief appearances longer than 3 outs': 0.2416, 'pitches per relief appearance': 18.294}
+ pull_pitches  outs_per_start  pitches_per_start  relief_appearances
+           86           14.91              79.86              500.54
+           88           15.24              81.65              490.03
+           90           15.57              83.43              479.21
+           92           15.88              85.14              468.65
+           94           16.19              86.84              458.11
+ close_late_from  top_appearances
+               7            212.2
+               8            164.1
+               9             94.7
+ avoid_yesterday  back_to_back_share
+            0.65               0.188
+            0.70               0.178
+            0.75               0.167
+            0.80               0.157
+            0.85               0.145
+            0.90               0.133
+chosen: {'pull_pitches': 90, 'close_late_from': 8, 'avoid_yesterday': 0.75}
+2000 seasons, wins per season 79.66 (standard deviation 6.50), emergencies (nobody rested enough) per season 0.93
+                                       measure    real  simulated  simulated / real
+       outs per start (the calibration target)  15.563     15.560             1.000
+                             pitches per start  83.530     83.352             0.998
+                 relief appearances per season 525.867    479.170             0.911
+                     relief innings per season 591.531    600.600             1.015
+           top-reliever appearances per season 157.275    164.876             1.048
+      share of relief appearances back to back   0.165      0.169             1.021
+                  share on a third day running   0.007      0.001             0.142
+share of relief appearances longer than 3 outs   0.242      0.318             1.315
+                 pitches per relief appearance  18.294     20.704             1.132
+  runs allowed per game (real: league average)   4.437      4.566             1.029
+                            extra-inning share   0.087      0.099             1.140
+               lock games per season (Phase 1)  62.600     60.918             0.973
+        lost locks per season (Phases 1 and 2)   2.500      2.908             1.163
+{'scenario': 'central', 'seasons': 2000.0, 'gain_with_fatigue': 2.881, 'gain_with_fatigue_se': 0.042, 'gain_always_fresh': 2.756, 'gain_always_fresh_se': 0.038, 'rest_value': 0.126, 'rest_value_se': 0.021}
+                                                            no D, fatigue  no D, always fresh  D, fatigue  D, always fresh
+wins                                                               79.664              80.191      82.546           82.947
+runs allowed                                                      739.764             735.110     817.751          814.440
+lost locks                                                          2.908               2.789       0.000            0.000
+D innings                                                           0.000               0.000     157.080          157.285
+relief appearances                                                479.170             477.841     375.786          372.444
+top-reliever appearances                                          164.876             165.142     131.324          123.017
+tired appearances                                                  80.863               0.000      65.804            0.000
+share of close-late half-innings started by a top reliever          0.929               0.957       0.927            0.949
+emergencies                                                         0.932               0.100       3.066            0.302
+                             scenario  seasons  gain_with_fatigue  gain_with_fatigue_se  gain_always_fresh  gain_always_fresh_se  rest_value  rest_value_se
+                              central     2000              2.882                 0.042              2.756                 0.038       0.126          0.021
+ penalty low (0.0039 runs per batter)     1000              2.755                 0.056              2.698                 0.052       0.057          0.023
+penalty high (0.0130 runs per batter)     1000              2.907                 0.062              2.698                 0.052       0.209          0.036
+               top relievers unshrunk     1000              2.413                 0.057              2.266                 0.050       0.147          0.033
+    manager always picks the freshest     1000              2.767                 0.058              2.698                 0.052       0.069          0.027
+ manager keeps a strict pecking order     1000              2.839                 0.062              2.698                 0.052       0.141          0.039
+                          low offense     1000              2.682                 0.057              2.574                 0.050       0.108          0.029
+                         high offense     1000              2.983                 0.059              2.873                 0.053       0.110          0.031
+lock + blowout against lock only, with fatigue: -0.209 wins (standard error 0.016); D innings 220.3 against 157.1
+                             scenario  rest_value  rest_value_se  locked_wins_real  total
+                              central       0.126          0.021               2.5  2.626
+ penalty low (0.0039 runs per batter)       0.057          0.023               2.5  2.557
+penalty high (0.0130 runs per batter)       0.209          0.036               2.5  2.709
+               top relievers unshrunk       0.147          0.033               2.5  2.647
+    manager always picks the freshest       0.069          0.027               2.5  2.569
+ manager keeps a strict pecking order       0.141          0.039               2.5  2.641
+                          low offense       0.108          0.029               2.5  2.608
+                         high offense       0.110          0.031               2.5  2.610
+Phase 2 bracket for the lock rule: floor 2.56, ceiling 3.99
