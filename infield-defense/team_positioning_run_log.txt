@@ -1,0 +1,16 @@
+fielder seasons 2483 OAA rows 1863 balls 206205
+fielder seasons with OAA 506 on more than one team (left out) 35
+team seasons linked to a code 120 codes per team name 1
+position 4 fielder seasons 171 SD this model 7.55 SD OAA 6.81 SD gap 6.94 mean gap -0.65
+position 5 fielder seasons 138 SD this model 7.21 SD OAA 5.92 SD gap 5.88 mean gap 0.03
+position 6 fielder seasons 162 SD this model 8.34 SD OAA 7.9 SD gap 8.85 mean gap -1.17
+leave-one-position-out r (2B, 3B, SS): [0.295 0.274 0.256] mean 0.275 90% bootstrap over team seasons 0.111 to 0.416
+shuffled teams: mean 0.0 95th percentile 0.127 share of shuffles at or above the observed mean 0.0
+same team, season t to t + 1: r = 0.407 (90% 0.260 to 0.530), n = 90
+team in t, its new arrivals in t + 1: r = 0.082 (90% -0.139 to 0.306), n = 63
+same player, same team, t to t + 1: r = 0.346 (90% 0.226 to 0.457), n = 172
+visiting shortstops at the park against the home team score: r = 0.167 (90% 0.039 to 0.287), n = 120
+SD of visiting shortstops per 100 by park season 2.58
+team score SD per 100 1.79 persistent part 1.15 opportunities per team season (2B, 3B, SS, single-team players) 978.0
+runs per ground-ball out (not-out minus out, delta_run_exp) 0.717
+persistent team SD in outs per season 11.2 in runs 8.0

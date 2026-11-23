@@ -1,0 +1,77 @@
+ground balls 212297
+game_year
+2023    53500
+2024    53085
+2025    52916
+2026    52796
+dtype: int64
+ground balls after cleaning 206205 out rate 0.7297
+share with a batter sprint speed 0.9984
+{'Standard': 0.6765, 'Infield shade': 0.2282, 'Strategic': 0.0927, nan: 0.0027}
+{'field_out': 122882, 'single': 45753, 'force_out': 13345, 'grounded_into_double_play': 12860, 'double': 4456, 'field_error': 3729, 'fielders_choice': 1533, 'fielders_choice_out': 1232, 'triple': 269, 'double_play': 142, 'triple_play': 3, 'home_run': 1}
+                               brier  log_loss
+inputs                                        
+league rate                  0.19725   0.58358
+exit velocity, launch angle  0.16806   0.51015
++ spray angle, batter side   0.14288   0.44715
++ batter sprint speed        0.14263   0.44610
++ runners, outs, alignment   0.14002   0.43869
+          predicted  observed  balls
+p_decile                            
+0            0.2165    0.1949  20621
+1            0.4397    0.4431  20620
+2            0.6005    0.6003  20621
+3            0.7161    0.7158  20620
+4            0.7956    0.7916  20621
+5            0.8482    0.8493  20620
+6            0.8838    0.8907  20620
+7            0.9099    0.9171  20621
+8            0.9317    0.9334  20620
+9            0.9573    0.9606  20621
+outs minus expected outs by season {2023: -83.3, 2024: -176.8, 2025: 245.1, 2026: -36.5}
+balls fielded by an infielder 155924 by the pitcher or catcher 14957 reached the outfield 35324
+through-balls whose exit-velocity bin was empty (fallback used) 51 still empty 0
+first try: shares for a right-handed batter, standard alignment (1 = P, 2 = C, 3 = 1B, 4 = 2B, 5 = 3B, 6 = SS)
+               1      2      3      4      5      6
+spray_bin                                          
+-40.0      0.012  0.001  0.000  0.000  0.983  0.005
+-30.0      0.021  0.001  0.000  0.000  0.675  0.303
+-20.0      0.021  0.000  0.000  0.001  0.042  0.936
+-10.0      0.088  0.001  0.000  0.039  0.004  0.867
+ 0.0       0.312  0.001  0.001  0.597  0.005  0.084
+ 10.0      0.309  0.001  0.001  0.683  0.002  0.004
+ 20.0      0.118  0.001  0.025  0.855  0.000  0.001
+ 30.0      0.092  0.004  0.369  0.535  0.000  0.000
+final: shares for a right-handed batter, standard alignment, 100 mph and up
+               3      4      5      6
+spray_bin                            
+-40.0      0.000  0.000  0.993  0.007
+-30.0      0.000  0.000  0.518  0.482
+-20.0      0.000  0.000  0.013  0.987
+-10.0      0.000  0.051  0.004  0.945
+ 0.0       0.000  0.921  0.008  0.071
+ 10.0      0.000  0.986  0.000  0.014
+ 20.0      0.019  0.981  0.000  0.000
+ 30.0      0.425  0.575  0.000  0.000
+league total of outs minus expected outs by position, first try {3: -332.5, 4: 895.3, 5: -9.0, 6: 301.5}
+league total of outs minus expected outs by position, final {3: -331.7, 4: -34.3, 5: 99.3, 6: -433.7}
+fielder seasons 2483
+           count  mean    std    min   25%   50%   75%    max
+game_year                                                    
+2023        33.0  1.54  10.20 -15.29 -4.91  1.05  4.50  28.04
+2024        36.0  0.50   7.85 -13.12 -6.45 -0.85  6.22  19.33
+2025        32.0  0.82   9.18 -18.36 -3.64  1.10  6.11  22.47
+2026        32.0  0.95   9.40 -23.52 -4.68  1.68  6.63  25.11
+first try position 3 fielder seasons 78 r 0.71 slope of OAE on OAA 0.707 SD OAE 6.09 SD OAA 6.11
+first try position 4 fielder seasons 121 r 0.554 slope of OAE on OAA 0.558 SD OAE 7.92 SD OAA 7.85
+first try position 5 fielder seasons 108 r 0.642 slope of OAE on OAA 0.754 SD OAE 7.74 SD OAA 6.59
+first try position 6 fielder seasons 131 r 0.412 slope of OAE on OAA 0.41 SD OAE 8.75 SD OAA 8.79
+final position 3 fielder seasons 79 r 0.707 slope of OAE on OAA 0.704 SD OAE 6.05 SD OAA 6.08
+final position 4 fielder seasons 131 r 0.534 slope of OAE on OAA 0.582 SD OAE 8.28 SD OAA 7.6
+final position 5 fielder seasons 106 r 0.64 slope of OAE on OAA 0.748 SD OAE 7.75 SD OAA 6.63
+final position 6 fielder seasons 133 r 0.403 slope of OAE on OAA 0.419 SD OAE 9.07 SD OAA 8.73
+position 4 pairs 53 year-to-year r, this model 0.501 OAA 0.43
+position 5 pairs 46 year-to-year r, this model 0.177 OAA 0.518
+position 6 pairs 68 year-to-year r, this model 0.298 OAA 0.362
+shortstop league rate of outs minus expected per opportunity, by season {2023: -0.008, 2024: -0.0089, 2025: -0.0014, 2026: -0.012}
+saved 206205 balls and 2483 fielder seasons

@@ -1,0 +1,52 @@
+arm rows 252 duplicate player seasons 0
+positioning rows 745 player seasons on two teams 20
+shortstop arm seasons 252 positioning player seasons and sides 725
+league shortstop depth and angle by season and batter side {(2023, 'L'): (np.float64(152.4), np.float64(-6.5)), (2023, 'R'): (np.float64(148.3), np.float64(-18.2)), (2024, 'L'): (np.float64(152.7), np.float64(-6.3)), (2024, 'R'): (np.float64(148.4), np.float64(-18.4)), (2025, 'L'): (np.float64(152.3), np.float64(-6.0)), (2025, 'R'): (np.float64(148.3), np.float64(-18.1)), (2026, 'L'): (np.float64(152.5), np.float64(-6.1)), (2026, 'R'): (np.float64(148.1), np.float64(-18.4))}
+count    252.00
+mean      84.13
+std        3.66
+min       75.80
+25%       81.20
+50%       83.65
+75%       86.45
+max       95.30
+Name: arm_ss, dtype: float64
+average batter sprint speed on ground balls 27.35 ft/s
+spray angle  -26.1: throw 146.4 ft, 84 mph 1.189 s, 88 mph 1.135 s, saved 0.054 s, 1.48 ft of running
+spray angle  -18.1: throw 134.2 ft, 84 mph 1.089 s, 88 mph 1.040 s, saved 0.050 s, 1.35 ft of running
+spray angle  -10.1: throw 121.7 ft, 84 mph 0.988 s, 88 mph 0.943 s, saved 0.045 s, 1.23 ft of running
+spray angle    0.0: throw 105.9 ft, 84 mph 0.860 s, 88 mph 0.821 s, saved 0.039 s, 1.07 ft of running
+shortstop balls with an arm strength 65474 shortstop seasons 252 weighted opportunities 53861.6
+              opportunities  out_rate  expected  throw_ft
+direction                                                
+at him            19977.544     0.883     0.855   131.750
+to his left       17564.770     0.590     0.618   113.846
+to his right      16319.241     0.651     0.677   142.490
+{'at him': 3.58, 'to his left': -2.06, 'to his right': -1.86}
+             throw  opportunities  strongest  weakest  difference  lo90  hi90
+0     under 115 ft         6015.5      -4.79    -1.98       -2.81 -4.80 -0.88
+1    115 to 130 ft        10498.6       1.36     3.24       -1.88 -3.44 -0.36
+2    130 to 145 ft        15082.8       1.47     1.56       -0.09 -1.17  1.13
+3  145 ft and over         4172.4      -3.64    -6.63        3.00  0.21  5.65
+plays 65392 shortstop seasons 252
+                   coef    lo90    hi90
+const           -0.0480 -0.0730 -0.0231
+arm_z           -0.0259 -0.0511  0.0002
+fielder_speed_z  0.0041 -0.0200  0.0316
+runner_z        -0.0173 -0.0338  0.0011
+throw_z          0.0511  0.0221  0.0809
+arm_x_throw      0.0446  0.0140  0.0765
+arm_x_runner     0.0118 -0.0059  0.0286
+to his right: +1 SD of arm is worth 0.12 outs per 100 chances (mean throw 142 ft)
+at him: +1 SD of arm is worth -0.20 outs per 100 chances (mean throw 132 ft)
+to his left: +1 SD of arm is worth -0.90 outs per 100 chances (mean throw 114 ft)
+toward third-base line: r = 0.044 (90% -0.092 to 0.182), n = 133
+toward first-base line: r = -0.125 (90% -0.265 to 0.033), n = 133
+in front: r = 0.187 (90% 0.051 to 0.312), n = 133
+behind: r = 0.203 (90% 0.058 to 0.341), n = 133
+all OAA: r = 0.103 (90% -0.024 to 0.233), n = 133
+shortstop seasons 250 r(depth, arm) -0.064 slope -0.022 ft per mph
+r(depth, sprint speed) 0.008 n 250
+r(arm, sprint speed) 0.19
+r(angle, arm) -0.101 (negative angle is toward third base)
+depth: mean 148.3 SD 1.3 ft; arm: SD 3.66 mph
